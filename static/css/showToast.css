@@ -1,0 +1,109 @@
+/* 弱提示css */
+#toastLoaderFullScreen {
+    font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    z-index: 99999;
+    overflow: hidden;
+    word-break: break-all;
+    background-color: transparent;
+}
+/* 遮罩 */
+#toastLoader_content {
+    width: 8rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-left: -4rem;
+    z-index: 99999;
+    /* background:hsla(0, 40%, 100%, 0.5); */
+    /* background: hsl(0, 20%, 90%); */
+    background: rgba(0, 0, 0, 0.7);
+}
+/* 图片 */
+#toastLoader_content img {
+    width: 3.3rem;
+    height: 3.3rem;
+    margin-top: 0.5rem;
+}
+/* 加载图片 */
+.toastLoader_loadImg_content {
+    width: 2rem !important; 
+    height: 2rem !important; 
+    margin: 1.1rem 0 0.6rem 0 !important;
+    animation: loadImg 3.5s infinite;
+}
+/* 加载动画 */
+ @keyframes loadImg {
+    0% {
+        transform: rotate(0);
+        animation-timing-function: linear;
+    }
+    50% {
+        transform: rotate(900deg);
+        animation-timing-function: linear;
+    }
+    100% {
+        transform: rotate(1800deg);
+        animation-timing-function: linear;
+    }
+}
+/* 图标 */
+#toastLoader_content .material-icons {
+    /* margin-top: 1rem; */
+    animation: oastLoaderIconsShow ease 800ms;
+}
+/* 图标显示动画 */
+@keyframes oastLoaderIconsShow {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 10, 0) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+/*提示框显示动画*/
+.toastLoader_toast_show {
+    animation: oastLoaderToastShow ease 800ms;
+}
+@keyframes oastLoaderToastShow {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 10, 0) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+/*提示框隐藏动画*/
+.toastLoader_toast_hide {
+    animation: oastLoaderToastHide ease 800ms;
+}
+@keyframes oastLoaderToastHide {
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) scale(0);
+    }
+}
+/* 提示文字 */
+#toastLoaderText {
+    margin: 0 0.5rem 0.5rem 0.5rem;
+    word-wrap: break-word; /*自动换行*/
+    text-align: center;
+    font-size: 0.8rem;
+    color: #fff;
+    /* background-color: red; */
+}
